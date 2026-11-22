@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Calendar</title>
+
+    <!-- Ket noi file CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="calendar">
+
+        <!-- Tieu de -->
+        <div class="header">
+            <div>
+                <h1>My Calendar</h1>
+                <p>LỊCH NGÀY THÁNG NĂM</p>
+            </div>
+        </div>
+
+        <!-- Dieu khien -->
+        <div class="controls">
+
+            <div>
+                <button onclick="changeMonth(-1)">❮</button>
+                <button onclick="changeMonth(1)">❯</button>
+            </div>
+
+            <div>
+                <select id="month" onchange="selectMonth()">
+                    <option value="0">Tháng 1</option>
+                    <option value="1">Tháng 2</option>
+                    <option value="2">Tháng 3</option>
+                    <option value="3">Tháng 4</option>
+                    <option value="4">Tháng 5</option>
+                    <option value="5">Tháng 6</option>
+                    <option value="6">Tháng 7</option>
+                    <option value="7">Tháng 8</option>
+                    <option value="8">Tháng 9</option>
+                    <option value="9">Tháng 10</option>
+                    <option value="10">Tháng 11</option>
+                    <option value="11">Tháng 12</option>
+                </select>
+
+                <select id="year" onchange="selectYear()"></select>
+            </div>
+
+            <button onclick="goToday()">Today</button>
+
+        </div>
+
+        <!-- Ten cac thu -->
+        <div class="weekdays">
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+            <div>Sun</div>
+        </div>
+
+        <!-- Hien thi ngay -->
+        <div class="dates" id="dates"></div>
+
+        <!-- Thong tin ngay -->
+        <div class="detail">
+            <p>NGÀY ĐANG ĐƯỢC CHỌN</p>
+            <h2 id="day">22</h2>
+            <h3 id="fullDate"></h3>
+        </div>
+
+    </div>
+
+    <!-- Ket noi file JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
