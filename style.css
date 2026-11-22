@@ -1,0 +1,179 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#F3EEFF;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px 15px;
+}
+
+.calendar{
+    background:white;
+    width:100%;
+    max-width:750px;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+/* Tieu de */
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.header h1{
+    color:#62458F;
+    font-size:28px;
+}
+
+.header p{
+    color:#A18DBF;
+    font-size:13px;
+    margin-top:5px;
+}
+
+/* Dieu khien lich */
+.controls{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.controls select,
+.controls button{
+    padding:9px 12px;
+    border:1px solid #DDD2F0;
+    border-radius:8px;
+    background:white;
+    color:#62458F;
+    cursor:pointer;
+    font-size:14px;
+}
+
+.controls button:hover{
+    background:#7955B5;
+    color:white;
+}
+
+.controls select:focus{
+    outline:2px solid #BDA5E4;
+}
+
+/* Ten cac thu */
+.weekdays{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:8px;
+    margin-bottom:10px;
+    text-align:center;
+}
+
+.weekdays div{
+    color:#9178B5;
+    font-weight:bold;
+    padding:10px 0;
+    font-size:14px;
+}
+
+/* Cac ngay trong thang */
+.dates{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:8px;
+}
+
+.dates div{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:15px 5px;
+    border-radius:10px;
+    color:#514866;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.dates div:hover:not(.empty){
+    background:#EDE3FA;
+}
+
+.dates .empty{
+    cursor:default;
+}
+
+/* Ngay hom nay */
+.dates .today{
+    border:2px solid #9674C6;
+    color:#7955B5;
+    font-weight:bold;
+}
+
+/* Ngay dang duoc chon */
+.dates .selected{
+    background:#7955B5;
+    color:white;
+    font-weight:bold;
+}
+
+.dates .selected:hover{
+    background:#62458F;
+}
+
+/* Thong tin ngay duoc chon */
+.detail{
+    margin-top:25px;
+    padding:20px;
+    background:#F5F0FC;
+    border-radius:12px;
+    text-align:center;
+}
+
+.detail p{
+    color:#967FB7;
+    font-size:13px;
+    margin-bottom:8px;
+}
+
+.detail h2{
+    color:#8f4581;
+    font-size:36px;
+    margin-bottom:5px;
+}
+
+.detail h3{
+    color:#7955B5;
+    font-size:16px;
+    font-weight:normal;
+}
+
+/* Responsive cho dien thoai */
+@media(max-width:400px){
+    body{
+        padding:20px 10px;
+    }
+
+    .calendar{
+        padding:15px;
+    }
+
+    .weekdays,.dates{
+        gap:3px;
+    }
+
+    .dates div{
+        padding:11px 2px;
+    }
+}
